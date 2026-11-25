@@ -1,0 +1,20 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thorsland Games logo</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap">
+<style>body{margin:0;background:#f4f1ea;display:flex;justify-content:center;padding:16px}img{width:100%;max-width:512px;aspect-ratio:1;display:block}</style>
+</head><body><img id="logo" alt="Thorsland Games logo">
+<script>
+async function draw(){
+  try{await document.fonts.load("400 330px 'Archivo Black'");}catch(e){}
+  const S=1024,c=document.createElement("canvas");c.width=c.height=S;const g=c.getContext("2d");
+  const gr=g.createLinearGradient(0,0,0,S);gr.addColorStop(0,"#f4f1ea");gr.addColorStop(1,"#e3ddd0");g.fillStyle=gr;g.fillRect(0,0,S,S);
+  g.fillStyle="#33343f";g.beginPath();g.moveTo(0,760);[[150,610],[260,680],[420,560],[540,640],[700,520],[860,650],[1024,590],[1024,1024],[0,1024]].forEach(p=>g.lineTo(...p));g.closePath();g.fill();
+  g.fillStyle="#1d1d24";g.beginPath();g.moveTo(0,840);[[200,600],[330,720],[512,470],[700,730],[820,640],[1024,820],[1024,1024],[0,1024]].forEach(p=>g.lineTo(...p));g.closePath();g.fill();
+  g.fillStyle="#f4f1ea";
+  g.beginPath();g.moveTo(512,470);g.lineTo(568,553);g.lineTo(540,540);g.lineTo(512,566);g.lineTo(486,538);g.lineTo(458,550);g.closePath();g.fill();
+  g.beginPath();g.moveTo(200,600);g.lineTo(240,655);g.lineTo(220,648);g.lineTo(200,668);g.lineTo(182,646);g.lineTo(165,652);g.closePath();g.fill();
+  g.fillStyle="#c2361b";g.textAlign="center";g.font="400 330px 'Archivo Black', Impact, sans-serif";g.fillText("TG",S/2,420);
+  document.getElementById("logo").src=c.toDataURL("image/png");
+}
+draw();
+</script></body></html>
